@@ -1,71 +1,98 @@
-# sgt-watch README
+SGT-WATCH VS Code Extension
+A VS Code extension that monitors main.dart with military-themed sergeant chatter and Believing Soldier encouragement. Port of the original Bash script: sgt-watch. Perfect for Dart beginners!
+Features
 
-This is the README for your extension "sgt-watch". After writing up a brief description, we recommend including the following sections.
+Watches main.dart for changes in your VS Code workspace.
+Military-style chatter for:
+Empty files (sarcastic sergeant remarks).
+Errors (debug tips for NoSuchMethodError, FormatException, etc.).
+Interactive code (instructions for readLineSync).
+Successful runs (celebratory messages).
 
-## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Believing Soldier: Optional encouraging messages to keep you motivated.
+Username authentication via VS Code input box.
+In development: Idle chatter and customizable chatter files.
 
-For example if there is an image subfolder under your extension project workspace:
+Prerequisites
 
-\!\[feature X\]\(images/feature-x.png\)
+Dart SDK: Installdart --version
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
-## Requirements
+VS Code: Installcode --version
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
 
-## Extension Settings
+Git: Installgit --version
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
-For example:
+Node.js and npm: Installnode --version
+npm --version
 
-This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
 
-## Known Issues
+Installation
+Not yet published to the VS Code Marketplace. To test locally:
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Clone the repo:git clone https://github.com/BiqqMax/sgt-watch-vscode.git
+cd sgt-watch-vscode
 
-## Release Notes
 
-Users appreciate release notes as you update your extension.
+Install dependencies:npm install
 
-### 1.0.0
 
-Initial release of ...
+Compile the extension:npm run esbuild
 
-### 1.0.1
 
-Fixed issue #.
+Open in VS Code:code .
 
-### 1.1.0
 
-Added features X, Y, and Z.
+Press F5 to launch the Extension Development Host.
+Open a workspace with main.dart (e.g., ~/Desktop/test-dart).
 
----
+Usage
 
-## Following extension guidelines
+Save main.dart in your workspace (Ctrl+S).
+Enter a username (e.g., admin, commander) when prompted.
+See feedback in the VS Code Output panel:
+Empty file: Sarcastic sergeant remarks.
+Errors: Debug tips (e.g., "💡 Use try-catch with int.parse()").
+Interactive code: Instructions to run dart main.dart manually.
+Success: Celebratory messages with Believing Soldier encouragement.
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+In development: Idle chatter after 10 minutes.
 
-## Working with Markdown
+Example
+Create main.dart:
+void main() {
+  print('Hello, Dart programmers!');
+}
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+Save main.dart in the Extension Development Host. Expected Output:
+[Sgt_Vortex]: main.dart updated! Running...
+[Sgt_Blaze]: Commander, what sorcery is this? main.dart just... worked?!
+[Believing Soldier]: You've got this, Commander! main.dart's cheering for you!
+Output: Hello, Dart programmers!
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+Configuration
+In development: Customizable chatter files and settings (e.g., DART_FILE, BELIEVING_SOLDIER_ENABLED) will be configurable via VS Code settings.
+Limitations
 
-## For more information
+In development, not all Bash script features (e.g., idle chatter, customizable files) are implemented.
+Monitors one file (main.dart).
+Covers common Dart errors; may miss rare ones.
+Requires Dart SDK and Node.js for local testing.
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Contributing
 
-**Enjoy!**
+Fork the repo.
+Create a branch: git checkout -b my-feature.
+Commit: git commit -m "Add feature".
+Push: git push origin my-feature.
+Open a pull request.
+
+Report issues: GitHub Issues.
+License
+MIT License
+Contact
+Open an issue or ping me on Twitter/X with #SGTWatch.
